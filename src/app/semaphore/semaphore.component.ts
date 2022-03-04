@@ -35,6 +35,7 @@ export class SemaphoreComponent implements OnInit {
     })
   }
 
+
   convertFromDecToBin(number){
     let binaryNumber = [];
     let carry;
@@ -57,8 +58,23 @@ export class SemaphoreComponent implements OnInit {
     return this.circles 
 }
 
-
- 
+// convertFromDecToBin(number){
+  //     var binaryNumber = [];
+    
+  //     for (let i = number; i > 0; i--) {
+  //       binaryNumber.push(number % 2);
+  //       number = Math.floor(number / 2)
+  //     }
+  //   if (binaryNumber.length < this.circles.length) {
+  //     for (let i = this.circles.length - binaryNumber.length; i < this.circles.length; i++) {
+  //       binaryNumber.push(0);
+  //     }
+  //   }
+  
+     
+  
+  //     return binaryNumber;
+  // }
 }
 
 

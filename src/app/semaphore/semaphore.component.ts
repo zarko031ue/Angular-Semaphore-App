@@ -5,36 +5,31 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './semaphore.component.html',
   styleUrls: ['./semaphore.component.css'],
 })
+
 export class SemaphoreComponent implements OnInit {
   randomNumber: number;
   circles = [];
-  circlesCount = 8;  
-  
+  circlesCount = 8; 
+  status = false;
+
   constructor() {}
 
   ngOnInit() {
-    this.yellow();
-    const interval = setInterval(() => this.start(), 3000)
-    setTimeout(() => clearInterval(interval), 10000)
+    const interval = setInterval(() => this.start(), 2000)
+    setInterval(() => this.status = false, 4000)
+    setTimeout(() => clearInterval(interval), 20000)
   }
 
   start() {
     const randNumber = this.getRandomNumber();
     this.convertFromDecToBin(randNumber);
+    this.status = true;
   }
-  
+   
   getRandomNumber() {
      this.randomNumber = Math.floor(Math.random() * 256) + 1;
-      return this.randomNumber;
+     return this.randomNumber;
   }
-
-// Znao sam da ovo nece da radi ali hajde da komitujem bilo sta
-  yellow(){
-    this.circles.forEach(circle => {
-    return circle === 'yellow';
-    })
-  }
-
 
   convertFromDecToBin(number){
     let binaryNumber = [];
@@ -58,23 +53,7 @@ export class SemaphoreComponent implements OnInit {
     return this.circles 
 }
 
-// convertFromDecToBin(number){
-  //     var binaryNumber = [];
-    
-  //     for (let i = number; i > 0; i--) {
-  //       binaryNumber.push(number % 2);
-  //       number = Math.floor(number / 2)
-  //     }
-  //   if (binaryNumber.length < this.circles.length) {
-  //     for (let i = this.circles.length - binaryNumber.length; i < this.circles.length; i++) {
-  //       binaryNumber.push(0);
-  //     }
-  //   }
-  
-     
-  
-  //     return binaryNumber;
-  // }
+
 }
 
 

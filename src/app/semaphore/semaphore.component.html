@@ -1,13 +1,15 @@
 <div class="container">
-    <div class="circles">
-        <p *ngFor="let circle of circles" 
-            [ngStyle]="{backgroundColor: yellow()}"
+    <div class="circles" *ngIf="status">
+        <p *ngFor="let circle of circles; let i = index " 
             [ngClass]="{'red': circle === 0, 'green': circle === 1}">
-           </p>
+        </p>
+        
+    </div>
+    <div class="circles" *ngIf="!status" >
+        <p class="yellow" *ngFor="let circle of circles">
+        </p>
     </div>
 </div>
-
-
 
 
 

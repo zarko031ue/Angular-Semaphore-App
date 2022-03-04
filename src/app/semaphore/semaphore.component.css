@@ -1,0 +1,25 @@
+.red {
+    height: 10vw;
+    width: 10vw;
+    background-color: red;
+    border-radius: 50%;
+}
+
+.green{
+    height: 10vw;
+    width: 10vw;
+    background-color: green;
+    border-radius: 50%;
+}
+
+.yellow {
+    height: 10vw;
+    width: 10vw;
+    background-color: yellow;
+    border-radius: 50%;
+}
+
+.circles{
+    display : flex;
+    justify-content: space-between;
+}

@@ -1,7 +1,9 @@
 <div class="container">
     <div class="circles">
         <p *ngFor="let circle of circles" 
-            [ngClass]="{'red': circle === 0, 'green': circle === 1}"></p>
+            [ngStyle]="{backgroundColor: yellow()}"
+            [ngClass]="{'red': circle === 0, 'green': circle === 1}">
+           </p>
     </div>
 </div>
 

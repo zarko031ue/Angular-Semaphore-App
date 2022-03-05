@@ -10,20 +10,24 @@ export class SemaphoreComponent implements OnInit {
   randomNumber: number;
   circles = [];
   circlesCount = 8; 
-  status = false;
+  yellowColorStatus = true;
 
   constructor() {}
 
   ngOnInit() {
-    const interval = setInterval(() => this.start(), 2000)
-    setInterval(() => this.status = false, 4000)
+    this.intervals()
+  }
+
+  intervals(){
+    const interval = setInterval(() => this.start(), 1000)
     setTimeout(() => clearInterval(interval), 20000)
+    setInterval(() => this.yellowColorStatus = true, 2000)
   }
 
   start() {
     const randNumber = this.getRandomNumber();
     this.convertFromDecToBin(randNumber);
-    this.status = true;
+    this.yellowColorStatus = false;
   }
    
   getRandomNumber() {
